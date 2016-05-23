@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.util.Stack;
 
 public class Test {
 
@@ -25,7 +27,7 @@ public class Test {
 		//System.out.printf("%s%n", swe.root.op.get(1).op.get(1).getCourseId());
 		
 		*/
-		swe.root.addToFinished();
+		swe.root.addToFinished(swe);
 		CLTNode CHEM101 = new CLTNode("CHEM101",4,true);
 		CLTNode PHYS101 = new CLTNode("PHYS101",4,true);
 		CLTNode PHYS102 = new CLTNode("PHYS102",4,true);
@@ -79,7 +81,15 @@ public class Test {
 	    CSxxx.setMinimum(100);
 	    XExx1.setMinimum(65);
 	    XExx2.setMinimum(65);
+//	    Stack<CLTNode> s153Stack = new Stack<CLTNode>();
+//	    s153Stack.push(ISE307);
+//	    s153Stack.push(IAS322);
+	    //Term s153 = new Term("153",s153Stack);
+//	    swe.courses_stack_list.add(s153Stack);
+//	    Stack<CLTNode> s163Stack = new Stack<CLTNode>();
+//	    s163Stack.push(SWE399);
 	    
+	    //Term s163 = new Term("163",s163Stack);
 	    
 	   // MATH101.addToFinished();
 	    //Courses relations
@@ -107,7 +117,7 @@ public class Test {
 		    MATH201.addOp(STAT319);
 		    IAS201.addOp(IAS301);
 		    IAS212.addOp(IAS322);
-		    ENGL214.addOp(SWE399);
+		    //ENGL214.addOp(SWE399);
 		    //Junior
 		    swe.root.addOp(ISE307);
 		    //Senior
@@ -116,6 +126,7 @@ public class Test {
 	    
 	    //Core
 	    swe.root.addOp(ICS102);
+	    swe.root.addOp(SWE363);
 	    ICS102.addOp(ICS201);
 	    ICS102.addOp(ICS253);
 	    ICS102.addOp(SWE205);
@@ -149,7 +160,7 @@ public class Test {
 	    
 	    SWE326.addOp(SWE418);
 	    
-	    SWE363.addOp(SWE399);
+	    //SWE363.addOp(SWE399);
 	    
 	    SWE417.addOp(SWE418);
 	    
@@ -189,61 +200,78 @@ public class Test {
 	    swe.generateAPlan(1);
 	    */
 	    //My Plan
-	    /*MATH101.addToFinished();
-	    MATH102.addToFinished();
-	    PHYS101.addToFinished();
-	    PHYS102.addToFinished();
-	    CHEM101.addToFinished();
-	    PE101.addToFinished();
-	    ENGL101.addToFinished();
-	    IAS101.addToFinished();
-	    ICS102.addToFinished();
-	    PE102.addToFinished();
-	    PHYS102.addToFinished();
-	    ENGL102.addToFinished();
-	    IAS111.addToFinished();
-	    MATH201.addToFinished();
-	    ICS253.addToFinished();
-	    SWE205.addToFinished();
-	    ICS201.addToFinished();
-	    COE202.addToFinished();
-	    STAT319.addToFinished();
-	    ENGL214.addToFinished();
-	    XExx1.addToFinished();
-	    XExx2.addToFinished();
-	    IAS212.addToFinished();
-	    IAS301.addToFinished();
-	    IAS201.addToFinished(); */ 
+//	    MATH101.addToFinished(swe);
+//	    MATH102.addToFinished(swe);
+//	    PHYS101.addToFinished(swe);
+//	    PHYS102.addToFinished(swe);
+//	    CHEM101.addToFinished(swe);
+//	    PE101.addToFinished(swe);
+//	    ENGL101.addToFinished(swe);
+//	    IAS101.addToFinished(swe);
+//	    ICS102.addToFinished(swe);
+//	    PE102.addToFinished(swe);
+//	    PHYS102.addToFinished(swe);
+//	    ENGL102.addToFinished(swe);
+//	    IAS111.addToFinished(swe);
+//	    MATH201.addToFinished(swe);
+//	    ICS253.addToFinished(swe);
+//	    SWE205.addToFinished(swe);
+//	    ICS201.addToFinished(swe);
+//	    COE202.addToFinished(swe);
+//	    STAT319.addToFinished(swe);
+//	    ENGL214.addToFinished(swe);
+//	    XExx1.addToFinished(swe);
+//	    XExx2.addToFinished(swe);
+//	    IAS212.addToFinished(swe);
+//	    IAS301.addToFinished(swe);
+//	    IAS201.addToFinished(swe); 
+//	    ICS202.addToFinished(swe);
+//	    ICS233.addToFinished(swe);
+//	    ICS254.addToFinished(swe);
+//	    SWE215.addToFinished(swe);
+//	    
+//	    ISE307.addToFinished(swe);
+//	    IAS322.addToFinished(swe);
+//	    
+//	    
+//	    SWE316.setPriorety(0);
+//	    SWE387.setPriorety(0);
+//	    SWE417.setPriorety(0);
+//	    SWE418.setPriorety(0);
 	    
 	    
-	    SWE316.setPriorety(0);
-	    SWE387.setPriorety(0);
-	    SWE417.setPriorety(0);
-	    SWE418.setPriorety(0);
-	    
-	    
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    //swe.courses_stack_list.add(s163Stack);
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
-	    CLT.plan();
+	    swe.plan();
 	    System.out.println();
 	    
-	    System.out.println(CLT.getTotal());
+	    System.out.println(swe.getTotal());
+	    Scanner s = new Scanner(System.in);
+//	    System.out.println("Menu:");
+//	    System.out.printf("1. Swap Courses%n%nchoice > ");
+//	    int choice = s.nextInt();
+	    s.close();
+	    
+	    
+	    new GUI(swe);
+	    
 	    
 	   /* for(CLTNode t : CLT.finished){
 	    	System.out.printf("%s%n", t.info());
